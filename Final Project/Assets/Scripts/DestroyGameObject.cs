@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class DestroyGameObject : MonoBehaviour
 {
-    public GameObject soccerPrefab;
+    private float rightBound = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +13,11 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {  
-
-        if (Input.GetKeyDown(KeyCode.Space))
+    {
+        if (transform.position.x > rightBound)
         {
-            Instantiate(soccerPrefab, transform.position, soccerPrefab.transform.rotation);
+            Destroy(gameObject);
         }
+        
     }
 }

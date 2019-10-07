@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
-    public GameObject soccerPrefab;
+    public float speed = 40;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +13,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {  
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(soccerPrefab, transform.position, soccerPrefab.transform.rotation);
-        }
+    {
+        transform.Translate(Vector3.right * Time.deltaTime * speed);
     }
 }
